@@ -25,10 +25,11 @@ def homePage():
         else:
             print("Invalid choice!")          
 
-# Sign up (name - password - role) #
+# Sign Up #
 def signUp():
     print("Creating an account")
 
+    # TP Number #
     while True:
      try:
          userTPNumber = str(input("Enter your TP number: TP"))
@@ -40,7 +41,8 @@ def signUp():
             print("Invalid TP Number!")
         else:
             break
-
+    
+    # Name #
     while True:
       userFirstName = input("Enter your First name: ")
       userLastName = input("Enter your Last name: ")
@@ -52,6 +54,7 @@ def signUp():
       
     userName = (f"{userFirstName} {userLastName}")
 
+    # Password #
     while True:
         userPassword = input("Enter your Password: ")
         userPasswordConfirm = input("Confirm your Password: ")
@@ -63,7 +66,8 @@ def signUp():
                 break
         else:
             print("Password must match!")
-        
+
+    # User Email Domain Assigner #      
     while True:
         userRoleChoice = input("1. Admin \n2.Lecturer \n3.Trainer \n4.Student\n")
 
@@ -87,7 +91,8 @@ def signUp():
             break
         else:
             print("Invalid choice!")
-        
+
+    # Created Email #   
     userEmail = str(f"TP{userTPNumber}{userEmailDomain}")
     print(f"Account successfully created! \n{userEmail}")
 
@@ -96,6 +101,7 @@ def signUp():
     db.write(f"\n{userEmail.upper()}, {userPassword}, {userName.upper()}, {userRole}")
     db.close
 
+# List for Users #
 users = []
 
 # Import Users from Text Temporarily #
@@ -110,19 +116,27 @@ for line in tempUsers:
 
 # Log in # 
 def logIn():
+    # In Case No User is Assigned #
     if len(users) == 0:
         print("No users assigned! Please sign up.")
     else:
+        # Setting Variables #
         attempts = 3
         loggedIn = False
 
+        # Loop to Compare Entered Credentials to Database #
         while (attempts + 1) > 0 and loggedIn == False :
             for user in users:
+
+                # User Input #
                 print("Kindly Log In")
                 enteredEmail = input("Email: ")
                 enteredPasskey = input("Password: ")
+
                 if user[0] == enteredEmail.upper() and user[1] == enteredPasskey:
                     print("successful log in!")
+
+                    # Redirect to Page Respective to User Role #
                     if user[3] == "admin\n":
                         print(f"Hello, {user[2]}!")
                         loggedIn = True
@@ -146,6 +160,7 @@ def logIn():
                     else:
                         print("Role unassigned! Please contact an APU Café admin.")
                 
+                # Attempts 
                 else:
                     if attempts == 0 :
                         print("Too much attempts, try again later.")
