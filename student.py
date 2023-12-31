@@ -1,19 +1,28 @@
+from profile_editor import profileEditor
+
 # Student #
-def studentPage():
+def studentPage(user):
     while True:
         studentMenuChoice = input("1.Schedule\n2.Requests\n3.Payments\n4.Profile\n5.Return to menu\n")
         if studentMenuChoice == '1':
             print("schedule here")
-            break        
+            while True:
+             studentSubMenuChoice = input("Enter B to return to Student menu\n")
+             if studentSubMenuChoice.upper() == 'B':
+                    studentPage(user)
+                    break
+             else:
+                 print("invalid choice!")   
         elif studentMenuChoice == '2':
             studentRequestMenu()
-            break
+            # choicer
         elif studentMenuChoice == '3':
             studentPaymentMenu()
-            break
+            # choicer
         elif studentMenuChoice == '4':
-            # profileEditor()
+            profileEditor(user)
             break
+            # choicer
         elif studentMenuChoice == '5':
             break
 
@@ -30,6 +39,8 @@ def studentPaymentMenu():
     print("payment")
     # Pay an Invoice "infoFromTrainer" #
     # View Paid Invoices #     
+
+    
 
 # # Initiator #
 # studentPage()

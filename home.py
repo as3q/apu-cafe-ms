@@ -16,7 +16,6 @@ def homePage():
 
         if homeMenuChoice == '1' :
             logIn()
-            break
         elif homeMenuChoice == '2' :
             signUp()
             break
@@ -109,12 +108,6 @@ for line in tempUsers:
     user = [line[0], line[1], line[2], line[3]]
     users.append(user)
 
-# Change Users' Data Function #
-def profileEditor():
-    print("Edit")
-    # Show Name Mail #
-    # Change password #
-
 # Log in # 
 def logIn():
     if len(users) == 0:
@@ -134,18 +127,22 @@ def logIn():
                         print(f"Hello, {user[2]}!")
                         loggedIn = True
                         adminPage()
+                        break
                     elif user[3] == "trainer\n":
                         print(f"Hello, {user[2]}!")
                         loggedIn = True
                         trainerPage()
+                        break
                     elif user[3] == "student\n":
                         print(f"Hello, {user[2]}!")
                         loggedIn = True
-                        studentPage()
+                        studentPage(user)
+                        break
                     elif user[3] == "lecturer\n":
                         print(f"Hello, {user[2]}!")
                         loggedIn = True
                         lecturerPage ()
+                        break
                     else:
                         print("Role unassigned! Please contact an APU Café admin.")
                 
