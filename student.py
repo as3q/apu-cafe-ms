@@ -40,7 +40,3 @@ def studentPaymentMenu():
     # Pay an Invoice "infoFromTrainer" #
     # View Paid Invoices #     
 
-    
-
-# # Initiator #
-# studentPage()
