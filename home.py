@@ -1,7 +1,10 @@
+# Import All Pages #
 from student import studentPage
 from lecturer import lecturerPage
 from admin import adminPage
 from trainer import trainerPage
+
+# Import OS to Clear Terminal (line 172) #
 import os
 
 # Home #
@@ -160,7 +163,7 @@ def logIn():
                     else:
                         print("Role unassigned! Please contact an APU Café admin.")
                 
-                # Attempts 
+                # Attempts Counter #
                 else:
                     if attempts == 0 :
                         print("Too much attempts, try again later.")
