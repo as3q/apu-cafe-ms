@@ -105,8 +105,13 @@ def signUp():
     # New User Formatting #
     new_user = ',\n{' + f'"user":"{userTPNumber}", "password":"{userPassword}", "fullname":"{userName}", "role":"{userRole}"' + '}'
 
-    # Adding the User to JSON #
-    json_data["users_data"].load(new_user)
+    # # Adding the User to JSON # FIX THIS PART
+    # json_data["users_data"].dump(new_user)
+
+    # with open(filename, 'w') as json_file:
+    # json.dump(listObj, json_file, 
+    #                     indent=4,  
+    #                     separators=(',',': '))
 
     # Updating Data in Text File #
     db = open("data.txt", "w")
@@ -136,7 +141,7 @@ def logIn():
                 enteredTP = input("TP number: TP")
                 enteredPasskey = input("Password: ")
 
-                if user["user"] == (f"TP{enteredTP()}") and user["password"] == enteredPasskey:
+                # if user["user"] == (f"TP{enteredTP()}") and user["password"] == enteredPasskey: # FIX AUTH
                     print("successful log in!")
                     
                     name = user["fullname"]
