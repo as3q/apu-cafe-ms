@@ -7,6 +7,17 @@ from trainer import trainerPage
 # Import OS to Clear Terminal (line 172) #
 import os
 
+# Import JSON to Read Data from Text File #
+import json
+
+# Read Data Text File with JSON #
+db = open("data.txt", "r")
+json_data = json.load(db)
+
+# Seperating Data # ??
+# users_data = json_data["users_data"]
+# modules_data = json_data["modules_data"]
+
 # Home #
 def homePage():
 
@@ -55,8 +66,8 @@ def signUp():
       else:
           print("Name includes unallowed characters!")
       
-    userName = (f"{userFirstName} {userLastName}")
-
+    userName = (f"{userFirstName.capitalize()} {userLastName.capitalize()}")
+    
     # Password #
     while True:
         userPassword = input("Enter your Password: ")
@@ -70,57 +81,46 @@ def signUp():
         else:
             print("Password must match!")
 
-    # User Email Domain Assigner #      
+    # User Role Assigner #      
     while True:
         userRoleChoice = input("1. Admin \n2.Lecturer \n3.Trainer \n4.Student\n")
 
         userRole = "unassigned"
 
         if userRoleChoice == '1' :
-            userEmailDomain = "@admin.apu.cafe"
             userRole = "admin"
             break
         elif userRoleChoice == '2' :
-            userEmailDomain = "@lecturer.apu.cafe"
             userRole = "lecturer"
             break
         elif userRoleChoice == '3' :
-            userEmailDomain = "@trainer.apu.cafe"
             userRole = "trainer"
             break
         elif userRoleChoice == '4' :
-            userEmailDomain = "@stu.apu.cafe"
             userRole = "student"
             break
         else:
             print("Invalid choice!")
 
-    # Created Email #   
-    userEmail = str(f"TP{userTPNumber}{userEmailDomain}")
-    print(f"Account successfully created! \n{userEmail}")
+    # New User Formatting #
+    new_user = ',\n{' + f'"user":"{userTPNumber}", "password":"{userPassword}", "fullname":"{userName}", "role":"{userRole}"' + '}'
 
-# Export Added User to Text #
-    db = open("users_data.txt", "a")
-    db.write(f"\n{userEmail.upper()}, {userPassword}, {userName.upper()}, {userRole}")
+    # Adding the User to JSON #
+    json_data["users_data"].update(new_user)
+
+    # Updating Data in Text File #
+    db = open("data.txt", "w")
+    db.write(json_data)
     db.close
 
-# List for Users #
-users = []
+    # Message # 
+    print(f"Account successfully created!")
 
-# Import Users from Text Temporarily #
-db = open("users_data.txt", "r")
-tempUsers = db.readlines()
-
-# Store Users to "users" List # 
-for line in tempUsers:
-    line = line.split(', ')
-    user = [line[0], line[1], line[2], line[3]]
-    users.append(user)
 
 # Log in # 
 def logIn():
     # In Case No User is Assigned #
-    if len(users) == 0:
+    if len(json_data["users_data"]) == 0:
         print("No users assigned! Please sign up.")
     else:
         # Setting Variables #
@@ -129,34 +129,36 @@ def logIn():
 
         # Loop to Compare Entered Credentials to Database #
         while (attempts + 1) > 0 and loggedIn == False :
-            for user in users:
+            for user in json_data["users_data"]:
 
                 # User Input #
                 print("Kindly Log In")
-                enteredEmail = input("Email: ")
+                enteredTP = input("TP number: TP")
                 enteredPasskey = input("Password: ")
 
-                if user[0] == enteredEmail.upper() and user[1] == enteredPasskey:
+                if user["user"] == (f"TP{enteredTP()}") and user["password"] == enteredPasskey:
                     print("successful log in!")
+                    
+                    name = user["fullname"]
 
                     # Redirect to Page Respective to User Role #
                     if user[3] == "admin\n":
-                        print(f"Hello, {user[2]}!")
+                        print(f"Hello, {name}!")
                         loggedIn = True
                         adminPage()
                         break
                     elif user[3] == "trainer\n":
-                        print(f"Hello, {user[2]}!")
+                        print(f"Hello, {name}!")
                         loggedIn = True
                         trainerPage()
                         break
                     elif user[3] == "student\n":
-                        print(f"Hello, {user[2]}!")
+                        print(f"Hello, {name}!")
                         loggedIn = True
-                        studentPage(user)
+                        studentPage(user, json_data)
                         break
                     elif user[3] == "lecturer\n":
-                        print(f"Hello, {user[2]}!")
+                        print(f"Hello, {name}!")
                         loggedIn = True
                         lecturerPage ()
                         break
@@ -172,11 +174,7 @@ def logIn():
                         os.system('cls')
                         print(f"Invalid Email or password! {attempts} attempts left")
                         attempts-=1
-                        break                       
+            break                       
 
 # Home Page Initiator #
 homePage()
-
-
-
-

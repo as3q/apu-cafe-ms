@@ -2,9 +2,11 @@
 from profile_editor import profileEditor
 
 # Student #
-def studentPage(user):
+def studentPage(user, json_data):
     while True:
+        # Student Menu Navigator #
         studentMenuChoice = input("1.Schedule\n2.Requests\n3.Payments\n4.Profile\n5.Return to menu\n")
+
         if studentMenuChoice == '1':
             print("schedule here")
             while True:
@@ -13,17 +15,21 @@ def studentPage(user):
                     studentPage(user)
                     break
              else:
-                 print("invalid choice!")   
+                 print("invalid choice!")
+
         elif studentMenuChoice == '2':
             studentRequestMenu()
             # choicer
+
         elif studentMenuChoice == '3':
             studentPaymentMenu()
             # choicer
+
         elif studentMenuChoice == '4':
-            profileEditor(user)
+            profileEditor(user, json_data)
             break
             # choicer
+        
         elif studentMenuChoice == '5':
             break
 
