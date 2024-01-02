@@ -106,7 +106,7 @@ def signUp():
     new_user = ',\n{' + f'"user":"{userTPNumber}", "password":"{userPassword}", "fullname":"{userName}", "role":"{userRole}"' + '}'
 
     # Adding the User to JSON #
-    json_data["users_data"].update(new_user)
+    json_data["users_data"].load(new_user)
 
     # Updating Data in Text File #
     db = open("data.txt", "w")
