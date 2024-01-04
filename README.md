@@ -5,7 +5,7 @@ Sohaib (TP),
 Osamah (TP)
 
 # APU (Asia Pacific University) Cafe Management System which requires the following : #
-# 1. Administrator # (SOHAIB)
+# 1. Administrator *(SOHAIB)*
 - Register and delete trainer. 
 - Assign trainer to respective level (Beginner, Intermediate, Advance) and modules. 
   A trainer can teach more than one module.
@@ -13,14 +13,14 @@ Osamah (TP)
 - View feedback sent by trainer.
 - Update own profile.
   
-# 2. Trainer # (OSAMAH)
+# 2. Trainer *(OSAMAH)*
 - Add coaching class information (e.g. module name, charges, class schedule etc).
 - Update and delete coaching class information.
 - View list of students enrolled and paid for his/her modules.
 - Send feedback (suggestion, complain etc) to administrator.
 - Update own profile.
   
-# 3. Lecturer # (AMJAD)
+# 3. Lecturer *(AMJAD)*
 - Register and enroll student to modules which he/she require coaching. During 
   enrolment, record student information for eg : name, TP number, email, contact 
   number, address, level, modules, month of enrolment etc (you may add other 
@@ -31,7 +31,7 @@ level/module).
 - Delete students who have completed their coaching class.
 - Update own profile.
   
-# 4. Student  # (MAHMOOD)
+# 4. Student *(MAHMOOD)*
 - View schedule of his/her coaching classes 
 - Send request to lecturer to enroll in additional coaching class for different 
   programming module. 
