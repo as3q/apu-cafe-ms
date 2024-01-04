@@ -1,7 +1,7 @@
 import json
 
 # Change User's Data Function #
-def profileEditor(user, data):
+def profileEditor(user, data, studentPage):
     tp = user["user_tp"]
     print(f"Hey, {tp}")
     
@@ -38,6 +38,11 @@ def profileEditor(user, data):
                         break
                     
             else:
+    
                 print("Password must match!")
+
+    elif profileEditorChoice == '2' : 
+        studentPage(user, data)
+
     else:
         print("Invalid choice!")
