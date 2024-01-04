@@ -14,10 +14,6 @@ import json
 db = open("data.txt", "r")
 data = json.load(db)
 
-# Seperating Data # ??
-# users_data = json_data["users_data"]
-# modules_data = json_data["modules_data"]
-
 # Home #
 def homePage():
 

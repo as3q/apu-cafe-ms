@@ -3,6 +3,7 @@ from profile_editor import profileEditor
 
 # Student #
 def studentPage(user, data):
+
     while True:
         # Student Menu Navigator #
         studentMenuChoice = input("1.Schedule\n2.Requests\n3.Payments\n4.Profile\n5.Return to menu\n")
@@ -12,7 +13,6 @@ def studentPage(user, data):
             while True:
              studentSubMenuChoice = input("Enter B to return to Student menu\n")
              if studentSubMenuChoice.upper() == 'B':
-                    studentPage(user)
                     break
              else:
                  print("invalid choice!")
@@ -26,7 +26,7 @@ def studentPage(user, data):
             # choicer
 
         elif studentMenuChoice == '4':
-            profileEditor(user, data)
+            profileEditor(user, data, studentPage)
             break
             # choicer
         
