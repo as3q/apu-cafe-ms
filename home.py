@@ -78,7 +78,7 @@ def signUp():
             else:
                 break
         else:
-            print("Password must match!")
+            print("Password does not match!")
 
     # User Role Assigner #      
     while True:
