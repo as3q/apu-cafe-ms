@@ -1,7 +1,7 @@
 # PYP Group Assignment 2023 Nov Intake #
-Mahmood Qaid (TP079014)
-Amjad (TP)
-Sohaib (TP)
+Mahmood Qaid (TP079014),
+Amjad (TP),
+Sohaib (TP),
 Osamah (TP)
 
 # APU (Asia Pacific University) Cafe Management System which requires the following : #
