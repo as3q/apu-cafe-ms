@@ -12,7 +12,7 @@ import json
 
 # Read Data Text File with JSON #
 db = open("data.txt", "r")
-json_data = json.load(db)
+data = json.load(db)
 
 # Seperating Data # ??
 # users_data = json_data["users_data"]
@@ -32,7 +32,6 @@ def homePage():
             logIn()
         elif homeMenuChoice == '2' :
             signUp()
-            break
         elif homeMenuChoice == '3' :
             print("Thanks for using APU Café!")
             break
@@ -103,20 +102,17 @@ def signUp():
             print("Invalid choice!")
 
     # New User Formatting #
-    new_user = ',\n{' + f'"user":"{userTPNumber}", "password":"{userPassword}", "fullname":"{userName}", "role":"{userRole}"' + '}'
+    new_user = {"user_tp":f"TP{userTPNumber}", "password":userPassword, "fullname":userName, "role":userRole}
 
-    # # Adding the User to JSON # FIX THIS PART
-    # json_data["users_data"].dump(new_user)
+    # Adding the User to JSON # 
+    data["users_data"].append(new_user) 
 
-    # with open(filename, 'w') as json_file:
-    # json.dump(listObj, json_file, 
-    #                     indent=4,  
-    #                     separators=(',',': '))
+    # ? #
+    json_data = json.dumps(data, indent=2)
 
-    # Updating Data in Text File #
+    # Updating Data in Text File # FIX THIS PART
     db = open("data.txt", "w")
     db.write(json_data)
-    db.close
 
     # Message # 
     print(f"Account successfully created!")
@@ -125,7 +121,7 @@ def signUp():
 # Log in # 
 def logIn():
     # In Case No User is Assigned #
-    if len(json_data["users_data"]) == 0:
+    if len(data["users_data"]) == 0:
         print("No users assigned! Please sign up.")
     else:
         # Setting Variables #
@@ -134,41 +130,43 @@ def logIn():
 
         # Loop to Compare Entered Credentials to Database #
         while (attempts + 1) > 0 and loggedIn == False :
-            for user in json_data["users_data"]:
-
+                
                 # User Input #
                 print("Kindly Log In")
                 enteredTP = input("TP number: TP")
                 enteredPasskey = input("Password: ")
 
-                # if user["user"] == (f"TP{enteredTP()}") and user["password"] == enteredPasskey: # FIX AUTH
-                    print("successful log in!")
-                    
-                    name = user["fullname"]
+                for user in data["users_data"]:
 
-                    # Redirect to Page Respective to User Role #
-                    if user[3] == "admin\n":
-                        print(f"Hello, {name}!")
-                        loggedIn = True
-                        adminPage()
-                        break
-                    elif user[3] == "trainer\n":
-                        print(f"Hello, {name}!")
-                        loggedIn = True
-                        trainerPage()
-                        break
-                    elif user[3] == "student\n":
-                        print(f"Hello, {name}!")
-                        loggedIn = True
-                        studentPage(user, json_data)
-                        break
-                    elif user[3] == "lecturer\n":
-                        print(f"Hello, {name}!")
-                        loggedIn = True
-                        lecturerPage ()
-                        break
-                    else:
-                        print("Role unassigned! Please contact an APU Café admin.")
+
+                    if user["user_tp"] == (f"TP{enteredTP}") and user["password"] == enteredPasskey:
+                        print("successful log in!")
+                    
+                        name = user["fullname"]
+
+                        # Redirect to Page Respective to User Role #
+                        if user["role"] == "admin":
+                            print(f"Hello, {name}!")
+                            loggedIn = True
+                            adminPage()
+                            break
+                        elif user["role"] == "trainer":
+                            print(f"Hello, {name}!")
+                            loggedIn = True
+                            trainerPage()
+                            break
+                        elif user["role"] == "student":
+                            print(f"Hello, {name}!")
+                            loggedIn = True
+                            studentPage(user, data)
+                            break
+                        elif user["role"] == "lecturer":
+                            print(f"Hello, {name}!")
+                            loggedIn = True
+                            lecturerPage ()
+                            break
+                        else:
+                            print("Role unassigned! Please contact an APU Café admin.")
                 
                 # Attempts Counter #
                 else:
@@ -177,9 +175,9 @@ def logIn():
                         break
                     else:
                         os.system('cls')
-                        print(f"Invalid Email or password! {attempts} attempts left")
+                        print(f"Invalid TP number or password! {attempts} attempts left")
                         attempts-=1
-            break                       
+                                     
 
 # Home Page Initiator #
 homePage()

@@ -1,11 +1,45 @@
 {
     "users_data": [
-        {"user":"TP123123", "password":"Mahmood2003", "fullname":"TEST TEST", "role":"student"},
-        {"user":"TP012345", "password":"Mahmood2003", "fullname":"TEST TEST", "role":"trainer"},
-        {"user":"TP123456", "password":"Mahmood2003", "fullname":"TEST TEST", "role":"lecturer"},
-        {"user":"TP456456", "password":"Mahmood2003", "fullname":"TEST TEST", "role":"admin"}
+        {
+            "user_tp": "TP123123",
+            "password": "Mahmood2003",
+            "fullname": "TEST TEST",
+            "role": "student"
+        },
+        {
+            "user_tp": "TP012345",
+            "password": "Mahmood2003",
+            "fullname": "TEST TEST",
+            "role": "trainer"
+        },
+        {
+            "user_tp": "TP123456",
+            "password": "Mahmood2003",
+            "fullname": "TEST TEST",
+            "role": "lecturer"
+        },
+        {
+            "user_tp": "TP456456",
+            "password": "Mahmood2003",
+            "fullname": "TEST TEST",
+            "role": "admin"
+        },
+        {
+            "user_tp": "TP079014",
+            "password": "Mahmood2023",
+            "fullname": "Mahmood Qaid",
+            "role": "student"
+        }
     ],
     "modules_data": [
-        {"module_name":"python", "module_level":"advance", "trainer_name":"Sathiapriya", "students_enrolled(TP)":"TP000001, TP000002", "class_fees":"300"}
+        {
+            "module_name": "python",
+            "module_level": "advance",
+            "trainer_name": "Sathiapriya",
+            "students_enrolled": [
+                "TP000001, TP000002"
+            ],
+            "class_fees": "300"
+        }
     ]
 }

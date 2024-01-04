@@ -2,7 +2,7 @@
 from profile_editor import profileEditor
 
 # Student #
-def studentPage(user, json_data):
+def studentPage(user, data):
     while True:
         # Student Menu Navigator #
         studentMenuChoice = input("1.Schedule\n2.Requests\n3.Payments\n4.Profile\n5.Return to menu\n")
@@ -26,7 +26,7 @@ def studentPage(user, json_data):
             # choicer
 
         elif studentMenuChoice == '4':
-            profileEditor(user, json_data)
+            profileEditor(user, data)
             break
             # choicer
         

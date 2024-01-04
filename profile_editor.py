@@ -1,7 +1,9 @@
+import json
+
 # Change User's Data Function #
-def profileEditor(user, json_data):
-    email = user[0]
-    print(f"Hey, {email}")
+def profileEditor(user, data):
+    tp = user["user_tp"]
+    print(f"Hey, {tp}")
     
     profileEditorChoice = input(f"1.Change password\n2.Return to previous page\n")
     if profileEditorChoice == '1':
@@ -11,24 +13,30 @@ def profileEditor(user, json_data):
             changedPasswordConfirm = input("Confirm new password: ")
             
             # Password Requirements Checker #
+                # to Confirm Password #
             if changedPassword == changedPasswordConfirm:
                 if len(changedPassword) < 8:
                     print("Password too short!")
                 else:
-                    if changedPassword == user[1] :
+                    # Password Should NOT Be Same as the Old Password #
+                    if changedPassword == user["password"] :
                         print("Password similar to the old one!")
+                        continue
                     else:
+                        # Assigning New Password #
                         user["password"] = changedPassword
 
-                    # Updating JSON Database #
-                    json_data["users_data"].update(user["password"])
+                        # Updating JSON Database #
+                        json_data = json.dumps(data, indent=4)
 
-                    # Updating Database in Text File #
-                    db = open("data.txt", "w")
-                    db.write(json_data)
-                    db.close
+                        # Updating Database in Text File #
+                        db = open("data.txt", "w")
+                        db.write(json_data)
+                        db.close
+
+                        print("Password successfully changed!")
+                        break
                     
-                    break
             else:
                 print("Password must match!")
     else:
