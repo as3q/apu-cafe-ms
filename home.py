@@ -69,8 +69,8 @@ def signUp():
     
     # Password #
     while True:
-        userPassword = input("Enter your Password: ")
-        userPasswordConfirm = input("Confirm your Password: ")
+        userPassword = getpass.getpass(prompt="Enter your Password: ")
+        userPasswordConfirm = getpass.getpass(prompt="Confirm your Password: ")
 
         if userPassword == userPasswordConfirm:
             if len(userPassword) < 8:
