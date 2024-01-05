@@ -4,10 +4,10 @@ from lecturer import lecturerPage
 from admin import adminPage
 from trainer import trainerPage
 
-# Import OS to Clear Terminal (line 172) #
+# Importing OS to Clear Terminal (line 172) #
 import os
 
-# Import JSON to Read Data from Text File #
+# Importing JSON to Read Data from Text File #
 import json
 
 # Read Data Text File with JSON #
