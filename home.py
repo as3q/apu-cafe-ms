@@ -24,15 +24,16 @@ def homePage():
     while True:
         homeMenuChoice = input("1. Log in \n2. Sign up\n3. Exit\n")
 
-        if homeMenuChoice == '1' :
-            logIn()
-        elif homeMenuChoice == '2' :
-            signUp()
-        elif homeMenuChoice == '3' :
-            print("Thanks for using APU Café!")
-            break
-        else:
-            print("Invalid choice!")          
+        match homeMenuChoice:
+            case '1' :
+                logIn()
+            case '2' :
+                signUp()
+            case '3' :
+                print("Thanks for using APU Café!")
+                break
+            case other:
+                print("Invalid choice!")          
 
 # Sign Up #
 def signUp():
@@ -82,33 +83,32 @@ def signUp():
 
         userRole = "unassigned"
 
-        if userRoleChoice == '1' :
-            userRole = "admin"
-            break
-        elif userRoleChoice == '2' :
-            userRole = "lecturer"
-            break
-        elif userRoleChoice == '3' :
-            userRole = "trainer"
-            break
-        elif userRoleChoice == '4' :
-            userRole = "student"
-            break
-        else:
-            print("Invalid choice!")
+        match userRoleChoice:
+            case '1' :
+                userRole = "admin"
+                break
+            case '2' :
+                userRole = "lecturer"
+                break
+            case '3' :
+                userRole = "trainer"
+                break
+            case '4' :
+                userRole = "student"
+                break
+            case other:
+                print("Invalid choice!")
 
     # New User Formatting #
     new_user = {"user_tp":f"TP{userTPNumber}", "password":userPassword, "fullname":userName, "role":userRole}
 
-    # Adding the User to JSON # 
+    # Adding the User to Database # 
     data["users_data"].append(new_user) 
+    data = json.dumps(data, indent=2)
 
-    # ? #
-    json_data = json.dumps(data, indent=2)
-
-    # Updating Data in Text File # FIX THIS PART
+    # Updating Data in Text File # 
     db = open("data.txt", "w")
-    db.write(json_data)
+    db.write(data)
 
     # Message # 
     print(f"Account successfully created!")
@@ -137,32 +137,27 @@ def logIn():
 
                     if user["user_tp"] == (f"TP{enteredTP}") and user["password"] == enteredPasskey:
                         print("successful log in!")
+                        loggedIn = True
                     
-                        name = user["fullname"]
+                        name = user["fullname"].split()[0]
+                        print(f"Hello, {name}!")
 
                         # Redirect to Page Respective to User Role #
-                        if user["role"] == "admin":
-                            print(f"Hello, {name}!")
-                            loggedIn = True
-                            adminPage()
-                            break
-                        elif user["role"] == "trainer":
-                            print(f"Hello, {name}!")
-                            loggedIn = True
-                            trainerPage()
-                            break
-                        elif user["role"] == "student":
-                            print(f"Hello, {name}!")
-                            loggedIn = True
-                            studentPage(user, data)
-                            break
-                        elif user["role"] == "lecturer":
-                            print(f"Hello, {name}!")
-                            loggedIn = True
-                            lecturerPage ()
-                            break
-                        else:
-                            print("Role unassigned! Please contact an APU Café admin.")
+                        match user["role"]:
+                            case "admin":
+                                adminPage()
+                                break
+                            case "trainer":
+                                trainerPage()
+                                break
+                            case "student":
+                                studentPage(user, data)
+                                break
+                            case "lecturer":
+                                lecturerPage ()
+                                break
+                            case other:
+                                print("Role unassigned! Please contact an APU Café admin.")
                 
                 # Attempts Counter #
                 else:
