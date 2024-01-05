@@ -26,7 +26,7 @@
         },
         {
             "user_tp": "TP079014",
-            "password": "Mahmood2023",
+            "password": "Mahmood2003",
             "fullname": "Mahmood Qaid",
             "role": "student"
         }
