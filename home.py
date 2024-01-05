@@ -10,6 +10,9 @@ import os
 # Importing JSON to Read Data from Text File #
 import json
 
+# Importing Getpass to Mask User Password Input #
+import getpass
+
 # Read Data Text File with JSON #
 db = open("data.txt", "r")
 data = json.load(db)
@@ -130,8 +133,7 @@ def logIn():
                 # User Input #
                 print("Kindly Log In")
                 enteredTP = input("TP number: TP")
-                enteredPasskey = input("Password: ")
-
+                enteredPasskey = getpass.getpass(prompt="Password: ")
                 for user in data["users_data"]:
 
 
