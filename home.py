@@ -41,7 +41,7 @@ def homePage():
 # Sign Up #
 def signUp():
     # Make Data Accessible #
-    Global Data
+    global Data
     
     print("Creating an account")
 
@@ -123,7 +123,7 @@ def signUp():
 # Log in # 
 def logIn():
     # Make Data Accessible #
-    Global Data
+    global Data
     
     # In Case No User is Assigned #
     if len(data["users_data"]) == 0:
