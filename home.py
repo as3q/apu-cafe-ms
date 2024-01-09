@@ -40,6 +40,9 @@ def homePage():
 
 # Sign Up #
 def signUp():
+    # Make Data Accessible #
+    Global Data
+    
     print("Creating an account")
 
     # TP Number #
@@ -119,6 +122,9 @@ def signUp():
 
 # Log in # 
 def logIn():
+    # Make Data Accessible #
+    Global Data
+    
     # In Case No User is Assigned #
     if len(data["users_data"]) == 0:
         print("No users assigned! Please sign up.")
