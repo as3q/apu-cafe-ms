@@ -1,8 +1,8 @@
 # Import All Pages #
-from .pages.student import studentPage
-from .pages.lecturer import lecturerPage
-from .pages.admin import adminPage
-from .pages.trainer import trainerPage
+from pages.student import studentPage
+from pages.lecturer import lecturerPage
+from pages.admin import adminPage
+from pages.trainer import trainerPage
 
 # Importing OS to Clear Terminal (line 172) #
 import os
