@@ -1,8 +1,8 @@
 # Import All Pages #
-from student import studentPage
-from lecturer import lecturerPage
-from admin import adminPage
-from trainer import trainerPage
+from .pages.student import studentPage
+from .pages.lecturer import lecturerPage
+from .pages.admin import adminPage
+from .pages.trainer import trainerPage
 
 # Importing OS to Clear Terminal (line 172) #
 import os
@@ -40,7 +40,7 @@ def homePage():
 
 # Sign Up #
 def signUp():
-    # Make Data Accessible #
+    # Make Local Data Accessible #
     global Data
     
     print("Creating an account")
@@ -122,7 +122,7 @@ def signUp():
 
 # Log in # 
 def logIn():
-    # Make Data Accessible #
+    # Make Local Data Accessible #
     global Data
     
     # In Case No User is Assigned #
