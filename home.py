@@ -41,23 +41,27 @@ def homePage():
 # Sign Up #
 def signUp():
     # Make Local Data Accessible #
-    global Data
+    global data
     
     print("Creating an account")
 
     # TP Number #
-    while True:
-     try:
-         userTPNumber = str(input("Enter your TP number: TP"))
-     except: 
-         ValueError
-         continue
-     else:
-        if not userTPNumber.isnumeric or len(str(userTPNumber)) < 6:
+    userValid = False
+
+    while not userValid:
+     
+        userTPNumber = str(input("Enter your TP number: TP"))
+        
+        if not userTPNumber.isnumeric or len(str(userTPNumber)) != 6:
             print("Invalid TP Number!")
         else:
-            break
-    
+            for user in data["users_data"]:
+                if f"TP{userTPNumber}" == user["user_tp"]:
+                    print("TP number is already existing!")
+                    userValid = True
+                    return
+                              
+     
     # Name #
     while True:
       userFirstName = input("Enter your First name: ")
@@ -123,7 +127,7 @@ def signUp():
 # Log in # 
 def logIn():
     # Make Local Data Accessible #
-    global Data
+    global data
     
     # In Case No User is Assigned #
     if len(data["users_data"]) == 0:
