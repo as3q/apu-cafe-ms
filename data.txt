@@ -59,5 +59,13 @@
       ],
       "class_fees": "300"
     }
+  ],
+  "trainer_feedback": [
+    {
+      "message_id": "1",
+      "trainer_tp": "TP00000:,
+      "admin_tp": "TP000003",
+      "message": "Hey admin I am here to discuss a student"
+    }
   ]
 }
