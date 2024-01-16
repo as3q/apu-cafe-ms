@@ -6,7 +6,7 @@ def studentPage(user, data):
 
     while True:
         # Student Menu Navigator #
-        studentMenuChoice = input("1.Schedule\n2.Requests\n3.Payments\n4.Profile\n5.Return to menu\n")
+        studentMenuChoice = input("1.Schedule\n2.Requests\n3.Payments\n4.Profile\n5.Log out\n")
 
         if studentMenuChoice == '1':
             print("schedule here")
