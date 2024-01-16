@@ -130,7 +130,7 @@ def logIn():
     global data
     
     # In Case No User is Assigned #
-    if len(data["users_data"]) == 0:
+    if len(data[0]) == 0:
         print("No users assigned! Please sign up.")
     else:
         # Setting Variables #
