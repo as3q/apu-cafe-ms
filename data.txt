@@ -1,26 +1,26 @@
 {
   "users_data": [
     {
-      "user_tp": "TP123123",
-      "password": "Mahmood2003",
+      "user_tp": "TP1",
+      "password": "1",
       "fullname": "TEST TEST",
       "role": "student"
     },
     {
       "user_tp": "TP012345",
-      "password": "Mahmood2003",
+      "password": "Mahmood2003t",
       "fullname": "TEST TEST",
       "role": "trainer"
     },
     {
       "user_tp": "TP123456",
-      "password": "Mahmood2003",
+      "password": "Mahmood2003l",
       "fullname": "TEST TEST",
       "role": "lecturer"
     },
     {
       "user_tp": "TP456456",
-      "password": "Mahmood2003",
+      "password": "Mahmood2003a",
       "fullname": "TEST TEST",
       "role": "admin"
     },
@@ -37,35 +37,87 @@
       "role": "student"
     },
     {
-      "user_tp": "TP345347",
-      "password": "123456789",
-      "fullname": "Sdfsdf Sdfsdf",
-      "role": "student"
-    },
-    {
-      "user_tp": "TP453543",
-      "password": "123456789",
-      "fullname": "Wrwe Sdfsd",
+      "user_tp": "TP046559",
+      "password": "12345678",
+      "fullname": "Abdelrahman Abdellgabbar",
       "role": "student"
     }
   ],
   "modules_data": [
     {
-      "module_name": "python",
-      "module_level": "advance",
-      "trainer_name": "Sathiapriya",
+      "module_id": "pyadv64308",
+      "module_name": "Python",
+      "module_level": "Advanced",
+      "trainer_tp": "tp045643",
       "students_enrolled": [
-        "TP000001, TP000002"
+        "TP000001",
+        "TP079014",
+        "TP079014"
       ],
-      "class_fees": "300"
+      "module_starting_date": "2024-08-27",
+      "module_fee": "300"
     }
   ],
   "trainer_feedback": [
     {
       "message_id": "1",
-      "trainer_tp": "TP00000:,
-      "admin_tp": "TP000003",
-      "message": "Hey admin I am here to discuss a student"
+      "author_tp": "TP00340",
+      "message": "Hey Tae I am here to discuss a student"
+    }
+  ],
+  "enrollment_requests": [
+    {
+      "request_id": "1",
+      "student_tp": "TP000123",
+      "trainer_tp": "TP012345",
+      "module_id": "pyadv64308",
+      "request_status": "Pending"
+    },
+    {
+      "request_id": "2",
+      "student_tp": "TP090123",
+      "trainer_tp": "TP012345",
+      "module_id": "pyadv64308",
+      "request_status": "Canceled"
+    },
+    {
+      "request_id": "3",
+      "student_tp": "TP020123",
+      "trainer_tp": "TP012345",
+      "module_id": "pyadv64308",
+      "request_status": "Approved"
+    }
+  ],
+  "invoices_data": [
+    {
+      "paid_invoices": [
+        {
+          "invoice_id": "1",
+          "student_tp": "TP079014",
+          "module_id": "pyadv64308",
+          "invoice_status": "paid",
+          "payable": "0",
+          "transaction_date": "2024-01-18"
+        },
+        {
+          "invoice_id": "3",
+          "student_tp": "TP079014",
+          "module_id": "pyadv64308",
+          "invoice_status": "paid",
+          "payable": 0,
+          "transaction_date": "2024-01-21"
+        }
+      ],
+      "unpaid_invoices": [
+        {
+          "invoice_id": "2",
+          "student_tp": "TP1",
+          "module_id": "pyadv64308",
+          "invoice_status": "unpaid",
+          "payable": "300",
+          "transaction_date": "None"
+        }
+      ]
     }
   ]
 }

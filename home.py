@@ -13,9 +13,26 @@ import json
 # Importing Getpass to Mask User Password Input #
 import getpass
 
+import datetime
+
 # Read Data Text File with JSON #
 db = open("data.txt", "r")
 data = json.load(db)
+
+def dataUpdater(data):
+    # Overwriting Data #
+    data = json.dumps(data, indent=2)
+
+    # Updating Data in Text File # 
+    db = open("data.txt", "w")
+    db.write(data)
+
+    # Message # 
+    print(f"Account successfully created!")
+
+    # Reloading Data #
+    db = open("data.txt", "r")
+    data = json.load(db)
 
 # Home #
 def homePage():
@@ -48,18 +65,19 @@ def signUp():
     # TP Number #
     userValid = False
 
-    while not userValid:
+    while userValid == False:
      
         userTPNumber = str(input("Enter your TP number: TP"))
         
-        if not userTPNumber.isnumeric or len(str(userTPNumber)) != 6:
+        if not userTPNumber.isnumeric or not len(str(userTPNumber)) == 6:
             print("Invalid TP Number!")
         else:
             for user in data["users_data"]:
                 if f"TP{userTPNumber}" == user["user_tp"]:
                     print("TP number is already existing!")
-                    userValid = True
                     return
+            else:
+                userValid = True
                               
      
     # Name #
@@ -109,20 +127,15 @@ def signUp():
             case other:
                 print("Invalid choice!")
 
+    currentDate = datetime.date.today()
+
     # New User Formatting #
-    new_user = {"user_tp":f"TP{userTPNumber}", "password":userPassword, "fullname":userName, "role":userRole}
+    new_user = {"user_tp":f"TP{userTPNumber}", "password":userPassword, "fullname":userName, "role":userRole, "creation_date":currentDate}
 
     # Adding the User to Database # 
-    data["users_data"].append(new_user) 
-    data = json.dumps(data, indent=2)
+    data["users_data"].append(new_user)
 
-    # Updating Data in Text File # 
-    db = open("data.txt", "w")
-    db.write(data)
-
-    # Message # 
-    print(f"Account successfully created!")
-
+    dataUpdater(data)
 
 # Log in # 
 def logIn():
@@ -130,7 +143,7 @@ def logIn():
     global data
     
     # In Case No User is Assigned #
-    if len(data[0]) == 0:
+    if len(data["users_data"]) == 0:
         print("No users assigned! Please sign up.")
     else:
         # Setting Variables #
@@ -148,6 +161,7 @@ def logIn():
 
 
                     if user["user_tp"] == (f"TP{enteredTP}") and user["password"] == enteredPasskey:
+
                         print("successful log in!")
                         loggedIn = True
                     
@@ -163,7 +177,7 @@ def logIn():
                                 trainerPage()
                                 break
                             case "student":
-                                studentPage(user, data)
+                                studentPage(user, data, dataUpdater)
                                 break
                             case "lecturer":
                                 lecturerPage ()
@@ -181,6 +195,5 @@ def logIn():
                         print(f"Invalid TP number or password! {attempts} attempts left")
                         attempts-=1
                                      
-
 # Home Page Initiator #
 homePage()
