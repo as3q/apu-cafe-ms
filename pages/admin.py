@@ -40,6 +40,8 @@ def reigster_delete_assign_trainer():
                 "add trainer name to the level"
             else:
                 print ("invalid choice please choose again")
+        case 4:
+            return
 #view icome monthly#                
 def monthly_income_report():
     print("Monthly Income Report functionality goes here.")
