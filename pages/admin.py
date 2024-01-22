@@ -49,3 +49,5 @@ def adminPage():
     # view trainer feedback#
     def view_trainer_feedback():
         print("View Trainer Feedback functionality goes here.")
+    
+    admin_menu_choice()
