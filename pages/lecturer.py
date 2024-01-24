@@ -39,8 +39,4 @@ def lecturerPage():
         print("I")
 
     lecturer_menu_choice()
-    Register_enroll_students_to_modules()
-    Update_subject_enrollment_of_a_student()
-    Approve_the_request_from_student()
-    Delete_students()
 # write your code inside the function
