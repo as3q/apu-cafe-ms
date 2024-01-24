@@ -55,7 +55,7 @@
       "module_id": "pyadv64308",
       "module_name": "Python",
       "module_level": "Advanced",
-      "trainer_tp": "tp045643",
+      "trainer_tp": "TP012345",
       "students_enrolled": [
         "TP000001",
         "TP079014"
@@ -67,9 +67,7 @@
         {"Tuesday": "16:00-18:30"},
         {"Wednesday": "None"},
         {"Thursday": "16:00-18:30"},
-        {"Friday": "None"},
-        {"Saturday": "None"},
-        {"Sunday": "None"}
+        {"Friday": "None"}
       ]
     }
   ],
