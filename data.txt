@@ -58,7 +58,6 @@
       "trainer_tp": "tp045643",
       "students_enrolled": [
         "TP000001",
-        "TP079014",
         "TP079014"
       ],
       "module_starting_date": "2024-08-27",
