@@ -1,28 +1,28 @@
 {
   "users_data": [
     {
-      "user_tp": "TP1",
-      "password": "1",
-      "fullname": "TEST TEST",
-      "role": "student"
-    },
-    {
-      "user_tp": "TP012345",
-      "password": "Mahmood2003t",
-      "fullname": "TEST TEST",
+      "user_tp": "TP060312",
+      "password": "12345678",
+      "fullname": "Glenn Heathers",
       "role": "trainer"
     },
     {
-      "user_tp": "TP123456",
-      "password": "Mahmood2003l",
-      "fullname": "TEST TEST",
+      "user_tp": "TP050124",
+      "password": "abc123456",
+      "fullname": "Jason Eugene",
+      "role": "trainer"
+    },
+    {
+      "user_tp": "TP070912",
+      "password": "derick1999",
+      "fullname": "Derick Gray",
       "role": "lecturer"
     },
     {
-      "user_tp": "TP456456",
-      "password": "Mahmood2003a",
-      "fullname": "TEST TEST",
-      "role": "admin"
+      "user_tp": "TP060456",
+      "password": "mo1ali2020",
+      "fullname": "Mohammed Ali",
+      "role": "lecturer"
     },
     {
       "user_tp": "TP079014",
@@ -31,83 +31,484 @@
       "role": "student"
     },
     {
-      "user_tp": "TP076440",
-      "password": "messi3mk",
+      "user_tp": "TP070440",
+      "password": "messi4ever",
       "fullname": "Ibrahim Saif",
       "role": "student"
     },
     {
-      "user_tp": "TP046559",
-      "password": "12345678",
+      "user_tp": "TP040559",
+      "password": "ilovesarcasm",
       "fullname": "Abdelrahman Abdellgabbar",
       "role": "student"
     },
     {
-      "user_tp": "TP132444",
-      "password": "12345678",
-      "fullname": "Sad Asd",
-      "role": "admin",
-      "creation_date": "2024-01-22"
+      "user_tp": "TP080548",
+      "password": "chopin123",
+      "fullname": "Sohaib Sabri",
+      "role": "admin"
+    },
+    {
+      "user_tp": "TP030764",
+      "password": "ad123456",
+      "fullname": "Adham Shaher",
+      "role": "student"
+    },
+    {
+      "user_tp": "TP060214",
+      "password": "ellie@00",
+      "fullname": "Tom Keen",
+      "role": "lecturer"
+    },
+    {
+      "user_tp": "TP080561",
+      "password": "$123abc$",
+      "fullname": "Aaron Gerard",
+      "role": "student"
+    },
+    {
+      "user_tp": "TP060196",
+      "password": "777power",
+      "fullname": "Ahmed Ali",
+      "role": "trainer"
+    },
+    {
+      "user_tp": "TP060904",
+      "password": "bread1loaf",
+      "fullname": "Peter Griffin",
+      "role": "admin"
+    },
+    {
+      "user_tp": "TP020124",
+      "password": "pie45678",
+      "fullname": "Michelle Bond",
+      "role": "admin"
+    },
+    {
+      "user_tp": "TP040162",
+      "password": "sw001@Waze",
+      "fullname": "Smith Wazer",
+      "role": "trainer"
+    },
+    {
+      "user_tp": "TP050153",
+      "password": "Kat012abc",
+      "fullname": "Raymond Red",
+      "role": "lecturer"
+    },
+    {
+      "user_tp": "TP029483",
+      "password": "fib0charl",
+      "fullname": "Harold Cooper",
+      "role": "trainer"
+    },
+    {
+      "user_tp": "TP054533",
+      "password": "rr981680",
+      "fullname": "Katarina Rostova",
+      "role": "trainer"
+    },
+    {
+      "user_tp": "TP069123",
+      "password": "premium1203",
+      "fullname": "Daryl Ressler",
+      "role": "student"
+    },
+    {
+      "user_tp": "TP032614",
+      "password": "SalAw0@321",
+      "fullname": "Salem Awadi",
+      "role": "student"
+    },
+    {
+      "user_tp": "TP035678",
+      "password": "Alice@2023",
+      "fullname": "Alice Johnson",
+      "role": "student"
+    },
+    {
+      "user_tp": "TP044567",
+      "password": "BobSmith@5678",
+      "fullname": "Bob Smith",
+      "role": "student"
+    },
+    {
+      "user_tp": "TP055432",
+      "password": "Eva_Davis!4321",
+      "fullname": "Eva Davis",
+      "role": "student"
+    },
+    {
+      "user_tp": "TP061234",
+      "password": "ChrisM@2022",
+      "fullname": "Chris Miller",
+      "role": "student"
+    },
+    {
+      "user_tp": "TP023456",
+      "password": "LindaSecure!123",
+      "fullname": "Linda White",
+      "role": "student"
+    },
+    {
+      "user_tp": "TP043210",
+      "password": "DavidT@2023",
+      "fullname": "David Taylor",
+      "role": "student"
+    },
+    {
+      "user_tp": "TP068765",
+      "password": "SarahB!567",
+      "fullname": "Sarah Brown",
+      "role": "student"
+    },
+    {
+      "user_tp": "TP051234",
+      "password": "MichaelLeePass!",
+      "fullname": "Michael Lee",
+      "role": "student"
+    },
+    {
+      "user_tp": "TP033210",
+      "password": "Emily!789",
+      "fullname": "Emily Wilson",
+      "role": "student"
+    },
+    {
+      "user_tp": "TP062109",
+      "password": "John_Turner@pass",
+      "fullname": "John Turner",
+      "role": "student"
+    },
+    {
+      "user_tp": "TP053218",
+      "password": "LauraE!Secure",
+      "fullname": "Laura Evans",
+      "role": "student"
+    },
+    {
+      "user_tp": "TP046789",
+      "password": "Daniel_M@pass456",
+      "fullname": "Daniel Martinez",
+      "role": "student"
+    },
+    {
+      "user_tp": "TP058901",
+      "password": "OliviaM!123",
+      "fullname": "Olivia Moore",
+      "role": "student"
+    },
+    {
+      "user_tp": "TP049012",
+      "password": "James@Passw0rd",
+      "fullname": "James Johnson",
+      "role": "student"
+    },
+    {
+      "user_tp": "TP065432",
+      "password": "SophiaSecure456",
+      "fullname": "Sophia Davis",
+      "role": "student"
     }
   ],
   "modules_data": [
     {
-      "module_id": "pyadv64308",
+      "module_id": "pyadv08",
       "module_name": "Python",
       "module_level": "Advanced",
-      "trainer_tp": "TP012345",
+      "trainer_tp": "TP054533",
       "students_enrolled": [
-        "TP000001",
-        "TP079014"
+        {
+          "student_tp": "TP049012",
+          "enrollment_date": "2024-06-11"
+        },
+        {
+          "student_tp": "TP079014",
+          "enrollment_date": "2024-08-08"
+        }
       ],
       "module_starting_date": "2024-08-27",
+      "module_fee": "400",
+      "module_timetable": [
+        {
+          "Monday": "None"
+        },
+        {
+          "Tuesday": "16:00-18:30"
+        },
+        {
+          "Wednesday": "None"
+        },
+        {
+          "Thursday": "16:00-18:30"
+        },
+        {
+          "Friday": "None"
+        }
+      ]
+    },
+    {
+      "module_id": "pybeg11",
+      "module_name": "Python",
+      "module_level": "Beginner",
+      "trainer_tp": "TP040162",
+      "students_enrolled": [
+        {
+          "student_tp": "TP065432",
+          "enrollment_date": "2024-10-08"
+        }
+      ],
+      "module_starting_date": "2024-11-27",
+      "module_fee": "200",
+      "module_timetable": [
+        {
+          "Monday": "None"
+        },
+        {
+          "Tuesday": "None"
+        },
+        {
+          "Wednesday": "None"
+        },
+        {
+          "Thursday": "None"
+        },
+        {
+          "Friday": "None"
+        }
+      ]
+    },
+    {
+      "module_id": "cpint08",
+      "module_name": "Cpp",
+      "module_level": "Intermediate",
+      "trainer_tp": "TP054533",
+      "students_enrolled": [
+        {
+          "student_tp": "TP058901",
+          "enrollment_date": "2024-07-11"
+        },
+        {
+          "student_tp": "TP068765",
+          "enrollment_date": "2024-07-08"
+        }
+      ],
+      "module_starting_date": "2024-08-27",
+      "module_fee": "250",
+      "module_timetable": [
+        {
+          "Monday": "16:00-18:30"
+        },
+        {
+          "Tuesday": "None"
+        },
+        {
+          "Wednesday": "None"
+        },
+        {
+          "Thursday": "None"
+        },
+        {
+          "Friday": "16:00-18:30"
+        }
+      ]
+    },
+    {
+      "module_id": "cpadv09",
+      "module_name": "Cpp",
+      "module_level": "Advanced",
+      "trainer_tp": "TP029483",
+      "students_enrolled": [
+        {
+          "student_tp": "TP051234",
+          "enrollment_date": "2024-09-05"
+        },
+        {
+          "student_tp": "TP065432",
+          "enrollment_date": "2024-09-10"
+        }
+      ],
+      "module_starting_date": "2024-09-20",
       "module_fee": "300",
       "module_timetable": [
-        {"Monday": "None"},
-        {"Tuesday": "16:00-18:30"},
-        {"Wednesday": "None"},
-        {"Thursday": "16:00-18:30"},
-        {"Friday": "None"}
+        {
+          "Monday": "14:00-16:30"
+        },
+        {
+          "Tuesday": "None"
+        },
+        {
+          "Wednesday": "14:00-16:30"
+        },
+        {
+          "Thursday": "None"
+        },
+        {
+          "Friday": "None"
+        }
+      ]
+    },
+    {
+      "module_id": "jaint08",
+      "module_name": "Java",
+      "module_level": "Intermediate",
+      "trainer_tp": "TP060214",
+      "students_enrolled": [
+        {
+          "student_tp": "TP062109",
+          "enrollment_date": "2024-07-15"
+        },
+        {
+          "student_tp": "TP053218",
+          "enrollment_date": "2024-07-18"
+        }
+      ],
+      "module_starting_date": "2024-08-01",
+      "module_fee": "200",
+      "module_timetable": [
+        {
+          "Monday": "18:00-20:30"
+        },
+        {
+          "Tuesday": "None"
+        },
+        {
+          "Wednesday": "None"
+        },
+        {
+          "Thursday": "18:00-20:30"
+        },
+        {
+          "Friday": "None"
+        }
       ]
     }
   ],
   "trainer_feedback": [
     {
       "message_id": "1",
-      "author_tp": "TP012345",
-      "message": "Hey Tae I am here to discuss a student"
+      "author_tp": "TP029483",
+      "message": "I think I need to charge more for my module due to the increase of demand"
+    },
+    {
+      "message_id": "2",
+      "author_tp": "TP050124",
+      "message": "Considering a revision of my teaching materials to enhance engagement."
+    },
+    {
+      "message_id": "3",
+      "author_tp": "TP060214",
+      "message": "Exploring new teaching methodologies to cater to diverse learning styles."
+    },
+    {
+      "message_id": "4",
+      "author_tp": "TP040162",
+      "message": "Planning to conduct extra review sessions for upcoming challenging topics."
+    },
+    {
+      "message_id": "5",
+      "author_tp": "TP029483",
+      "message": "Seeking feedback on the effectiveness of current course structure."
+    },
+    {
+      "message_id": "6",
+      "author_tp": "TP054533",
+      "message": "Considering the addition of practical examples to the training modules."
     }
   ],
   "enrollment_requests": [
     {
       "pending_requests": [
         {
-          "request_id": "1",
-          "student_tp": "TP089014",
-          "trainer_tp": "TP012345",
-          "module_id": "pyadv64308",
+          "request_id": "5",
+          "student_tp": "TP079014",
+          "trainer_tp": "TP040162",
+          "module_id": "pybeg11",
           "request_status": "Pending",
-          "issue_date": "2024-12-28",
+          "issue_date": "2024-01-26",
+          "processed_date": "None"
+        },
+        {
+          "request_id": "6",
+          "student_tp": "TP051234",
+          "trainer_tp": "TP029483",
+          "module_id": "cpadv08",
+          "request_status": "Pending",
+          "issue_date": "2024-01-30",
+          "processed_date": "None"
+        },
+        {
+          "request_id": "7",
+          "student_tp": "TP068765",
+          "trainer_tp": "TP060214",
+          "module_id": "pyint42",
+          "request_status": "Pending",
+          "issue_date": "2024-01-31",
           "processed_date": "None"
         }
       ],
       "approved_requests": [
         {
           "request_id": "3",
-          "student_tp": "TP089014",
-          "trainer_tp": "TP012345",
-          "module_id": "pyadv64308",
+          "student_tp": "TP032614",
+          "trainer_tp": "TP054533",
+          "module_id": "pyadv08",
           "request_status": "Approved",
           "issue_date": "2024-12-28",
           "processed_date": "2024-01-10"
+        },
+        {
+          "request_id": "1",
+          "student_tp": "TP079014",
+          "trainer_tp": "TP054533",
+          "module_id": "pyadv08",
+          "request_status": "Approved",
+          "issue_date": "2024-12-28",
+          "processed_date": "2024-01-25"
+        },
+        {
+          "request_id": "8",
+          "student_tp": "TP051234",
+          "trainer_tp": "TP029483",
+          "module_id": "cpadv09",
+          "request_status": "Approved",
+          "issue_date": "2024-01-30",
+          "processed_date": "2024-02-10"
+        },
+        {
+          "request_id": "10",
+          "student_tp": "TP079014",
+          "trainer_tp": "TP029483",
+          "module_id": "cpadv09",
+          "request_status": "Approved",
+          "issue_date": "2024-02-04",
+          "processed_date": "2024-02-04"
+        },
+        {
+          "request_id": "11",
+          "student_tp": "TP044567",
+          "trainer_tp": "TP040162",
+          "module_id": "pybeg11",
+          "request_status": "Approved",
+          "issue_date": "2024-02-08",
+          "processed_date": "2024-02-13"
         }
       ],
       "canceled_requests": [
         {
+          "request_id": "9",
+          "student_tp": "TP068765",
+          "trainer_tp": "TP060214",
+          "module_id": "pyint42",
+          "request_status": "Canceled",
+          "issue_date": "2024-01-31",
+          "processed_date": "2024-02-05"
+        },
+        {
           "request_id": "2",
-          "student_tp": "TP089014",
-          "trainer_tp": "TP012345",
-          "module_id": "pyadv64308",
+          "student_tp": "TP044567",
+          "trainer_tp": "TP054533",
+          "module_id": "pyadv08",
           "request_status": "Canceled",
           "issue_date": "2024-12-28",
           "processed_date": "2024-01-11"
@@ -116,9 +517,9 @@
       "denied_requests": [
         {
           "request_id": "4",
-          "student_tp": "TP089014",
-          "trainer_tp": "TP012345",
-          "module_id": "pyadv64308",
+          "student_tp": "TP030764",
+          "trainer_tp": "TP054533",
+          "module_id": "pyadv08",
           "request_status": "Denied",
           "issue_date": "2024-12-28",
           "processed_date": "2024-01-20"
@@ -132,27 +533,67 @@
         {
           "invoice_id": "1",
           "student_tp": "TP079014",
-          "module_id": "pyadv64308",
+          "module_id": "pyadv08",
           "invoice_status": "paid",
           "payable": "0",
           "transaction_date": "2024-01-18"
         },
         {
-          "invoice_id": "3",
-          "student_tp": "TP079014",
-          "module_id": "pyadv64308",
+          "invoice_id": "4",
+          "student_tp": "TP051234",
+          "module_id": "cpint08",
+          "invoice_status": "paid",
+          "payable": "0",
+          "transaction_date": "2024-02-05"
+        },
+        {
+          "invoice_id": "6",
+          "student_tp": "TP068765",
+          "module_id": "pyint42",
           "invoice_status": "paid",
           "payable": 0,
-          "transaction_date": "2024-01-21"
+          "transaction_date": "2024-02-15"
         }
       ],
       "unpaid_invoices": [
         {
           "invoice_id": "2",
           "student_tp": "TP079014",
-          "module_id": "pyadv64308",
+          "module_id": "cpadv09",
           "invoice_status": "unpaid",
           "payable": "300",
+          "transaction_date": "None"
+        },
+        {
+          "invoice_id": "3",
+          "student_tp": "TP051234",
+          "module_id": "cpint08",
+          "invoice_status": "unpaid",
+          "payable": "250",
+          "transaction_date": "None"
+        },
+        {
+          "invoice_id": "5",
+          "student_tp": "TP068765",
+          "module_id": "pyint42",
+          "invoice_status": "unpaid",
+          "payable": "200",
+          "transaction_date": "None"
+        },
+        {
+          "invoice_id": "7",
+          "student_tp": "TP062109",
+          "module_id": "pybeg11",
+          "invoice_status": "unpaid",
+          "payable": "150",
+          "transaction_date": "None"
+        },
+        {
+          "invoice_id": "8",
+          "student_tp": "TP044567",
+          "module_id": "pybeg11",
+          "invoice_status": "unpaid",
+          "payable": "200",
           "transaction_date": "None"
         }
       ]

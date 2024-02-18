@@ -4,7 +4,6 @@
 from profile_editor import profileEditor
 import getpass
 
-
 def adminPage(user, data, dataUpdater):
     print ("welcome admin")
     def admin_menu_choice(user, data):
