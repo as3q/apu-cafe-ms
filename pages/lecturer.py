@@ -219,7 +219,7 @@ def lecturerPage(user, data,dataUpdater):
                             deleted_students_number += 1
                         module["module_starting_date"] = "1999-01-01"
                         dataUpdater(data)
-                        print(f"{deleted_students_number} students has been deleted from {module["module_id"]}")
+                        print(f'{deleted_students_number} students has been deleted from {module["module_id"]}')
         elif choice.upper() == "B":
             return
         else:
@@ -227,8 +227,4 @@ def lecturerPage(user, data,dataUpdater):
        
     lecturer_menu_choice(user,data,dataUpdater)
         
-<<<<<<< HEAD
 # write your code inside the function
-=======
-# write your code inside the function
->>>>>>> a7c3760713662c1ece3a8ef460d7fab8da916a7f
