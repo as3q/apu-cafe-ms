@@ -1,6 +1,6 @@
 # Importing Libraries #
 import os, datetime, time
-from profile_editor import profileEditor #
+from profile_editor import profileEditor 
 
 # Importing os to Clear Terminal (lines , , ) #
 # Importing json to Read Data from Text File (lines , ) #
@@ -10,35 +10,11 @@ from profile_editor import profileEditor #
 # Get Current Date #
 currentDate = datetime.date.today()
 
-# # A Function to Load from and Update to data.txt #
-# def dataUpdater(data):
-#     global pendingRequests, approvedRequests, canceledRequests, deniedRequests, allModules, allRequests
-
-#     # Overwriting Data #
-#     data = json.dumps(data, indent=2)
-
-#     # Updating Data in Text File # 
-#     db = open("data.txt", "w")
-#     db.write(data)
-
-#     # Reloading Data #
-#     db = open("data.txt", "r")
-#     data = json.load(db)
-
-#     # Grabbing/Updating Local Requests #
-#     pendingRequests = [request for request in data["enrollment_requests"][0]["pending_requests"]]
-#     approvedRequests = [request for request in data["enrollment_requests"][0]["approved_requests"]]
-#     canceledRequests = [request for request in data["enrollment_requests"][0]["canceled_requests"]]
-#     deniedRequests = [request for request in data["enrollment_requests"][0]["denied_requests"]]
-
-#     allModules = [module for module in data["modules_data"]]
-#     allRequests = [pendingRequests + approvedRequests + canceledRequests + deniedRequests]
-
 # A Function to Refresh Lists after Updating the Text File #
 def refreshLists(data):
     global pendingRequests, approvedRequests, canceledRequests, deniedRequests, allModules, allRequests, unpaidInvoices, paidInvoices
 
-    # Updating Local Requests #
+    # Updating Requests Lists #
     pendingRequests = [request for request in data["enrollment_requests"][0]["pending_requests"]]
     approvedRequests = [request for request in data["enrollment_requests"][0]["approved_requests"]]
     canceledRequests = [request for request in data["enrollment_requests"][0]["canceled_requests"]]
@@ -59,7 +35,7 @@ def studentPage(user, data, dataUpdater, grabModule, grabTrainerName):
     studentCurrentModules = [scmodule for scmodule in allModules for student in scmodule["students_enrolled"]
                              if student["student_tp"] == user["user_tp"]]
 
-    # A Boolean to Log the Student out if They Change Password #
+    # A Boolean to Log the Student out if They Change Password (True) #
     profileChanged = False
 
     # Student Menu Loop #
@@ -67,29 +43,30 @@ def studentPage(user, data, dataUpdater, grabModule, grabTrainerName):
         # Student Menu Navigator #
         studentMenuChoice = input("1.Schedule\n2.Requests\n3.Payments\n4.Profile\n5.Log out\n")
 
-        if studentMenuChoice == '1':
-            studentScheduleViewer(data, dataUpdater, studentCurrentModules, grabTrainerName)
+        match studentMenuChoice:
+            case '1':
+                studentScheduleViewer(data, studentCurrentModules, grabTrainerName)
 
-        elif studentMenuChoice == '2':
-            studentRequestMenu(user, data, dataUpdater, grabTrainerName, grabModule)
+            case '2':
+                studentRequestMenu(user, data, dataUpdater, grabTrainerName, grabModule)
 
-        elif studentMenuChoice == '3':
-            studentPaymentMenu(user, data, dataUpdater)
+            case '3':
+                studentPaymentMenu(user, data, dataUpdater)
 
-        elif studentMenuChoice == '4':
-            profileChanged = profileEditor(user, data, profileChanged, dataUpdater)
-            if profileChanged == True:
+            case '4':
+                profileChanged = profileEditor(user, data, profileChanged, dataUpdater)
+                if profileChanged == True:
+                    break
+
+            case '5':
+                print("Logging out...")
                 break
 
-        elif studentMenuChoice == '5':
-            print("Logging out...")
-            break
-
-        else:
-            print("Invalid choice!")
+            case other:
+                print("Invalid choice!")
 
 # Student Functions #
-def studentScheduleViewer(data, dataUpdater, studentCurrentModules, grabTrainerName):
+def studentScheduleViewer(data, studentCurrentModules, grabTrainerName):
     while True:
 
         refreshLists(data)
@@ -144,7 +121,7 @@ def studentRequestMenu(user, data, dataUpdater, grabTrainerName, grabModule):
                 # Temporary ID for Module #
                 tempModuleID = 1
 
-                # Only Show Modules Student is Not Enrolled In #
+                # Only Show Modules the student is not enrolled in #
                 availableModules = [module for module in allModules if user["user_tp"] not in
                                     [student["student_tp"] for student in module["students_enrolled"]]]
 
@@ -170,7 +147,7 @@ def studentRequestMenu(user, data, dataUpdater, grabTrainerName, grabModule):
                             print(f"Module ID: {tempModuleID}")
                             print(f"Module: {moduleName} {(moduleLevel)}")
                             print(f"Trainer: {trainerNamer}")
-                            print(f"Module Fee {moduleFee}RM")
+                            print(f"Module Fee: {moduleFee}RM")
                             print(f"Starting at {moduleDate}")
                             print("--------------------")
 
@@ -180,7 +157,7 @@ def studentRequestMenu(user, data, dataUpdater, grabTrainerName, grabModule):
                 newRequestID = len(allRequests[0]) + 1
 
                 while True:
-                    moduleIDChoice = input("Enter module ID that you want to join (Enter R to return back to Request menu): ")
+                    moduleIDChoice = input("Enter module ID that you want to join (or Enter R to return back to Request menu): ")
 
                     if moduleIDChoice.isnumeric() and 0 < int(moduleIDChoice) <= len(moduleIDs):
                         for moduleRequesting in availableModules:
@@ -270,6 +247,7 @@ def studentRequestMenu(user, data, dataUpdater, grabTrainerName, grabModule):
 
             case '3':
                 # View Requests (pending - canceled - approved - rejected) #
+
                 while True:
                     # Grabbing Student's Requests Only #
                     studentRequests = []

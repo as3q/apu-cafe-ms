@@ -13,7 +13,7 @@ db = open("data.txt", "r")
 data = json.load(db)
 
 def dataUpdater(data):
-    # Overwriting Data #
+    # Formatting Data into JSON Format #
     data = json.dumps(data, indent=2)
 
     # Updating Data in Text File # 
@@ -25,23 +25,18 @@ def dataUpdater(data):
     data = json.load(db)
 
 # Functions to Help Search from data #
-def grabModule(moduleGrabX, moduleGrabY):
-    db = open("data.txt", "r")
-    data = json.load(db)
+def grabModule(moduleGrabKey, moduleGrabValue):
     
     for moduleGrabbed in data["modules_data"]:
-        if moduleGrabX == moduleGrabbed[moduleGrabY]:
+        if moduleGrabKey == moduleGrabbed[moduleGrabValue]:
             moduleName = moduleGrabbed["module_name"]
             moduleLevel = moduleGrabbed["module_level"]
             moduleFee = moduleGrabbed["module_fee"]
             moduleDate = moduleGrabbed["module_starting_date"]
-            # moduleTrainer = moduleGrabbed["trainer_tp"]
     return moduleName, moduleLevel, moduleFee, moduleDate
 
 def grabTrainerName(trainerGrabTP):
-    db = open("data.txt", "r")
-    data = json.load(db)
-    
+
     for trainer in data["users_data"]:
         if trainer["user_tp"] == trainerGrabTP:
             trainerFullName = trainer["fullname"]
@@ -63,6 +58,7 @@ def logIn(data):
 
             for user in data["users_data"]:
                 if user["user_tp"] == (f"TP{enteredTP}") and user["password"] == enteredPasskey:
+                    os.system("cls")
 
                     print("successful log in!")
                     loggedIn = True
