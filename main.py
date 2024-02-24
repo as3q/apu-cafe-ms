@@ -78,7 +78,7 @@ def logIn(data):
                             studentPage(user, data, dataUpdater, grabModule, grabTrainerName)
                             break
                         case "lecturer":
-                            lecturerPage()
+                            lecturerPage(user, data,dataUpdater)
                             break
                         case other:
                             print("Role unassigned! Please contact an APU Café admin.")
