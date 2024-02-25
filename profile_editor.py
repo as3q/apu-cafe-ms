@@ -1,6 +1,6 @@
 import getpass
 
-def profileEditor(user, data, profileChanged, syncData):
+def profileEditor(user, data, profileChanged, dataUpdater):
     name = user["fullname"].split(" ")
     print(f"Hey, {name[0]}")
 
@@ -39,7 +39,7 @@ def profileEditor(user, data, profileChanged, syncData):
 
                     # Assigning New Password #
                     user["password"] = changedPassword
-                    syncData(data)
+                    dataUpdater(data)
                     print("Password successfully changed!")
                     return True
 
