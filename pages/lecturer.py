@@ -232,5 +232,3 @@ def lecturerPage(user, data,dataUpdater):
          
        
     lecturer_menu_choice(user,data,dataUpdater)
-        
-# write your code inside the function
