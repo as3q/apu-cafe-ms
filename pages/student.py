@@ -2,10 +2,10 @@
 import os, datetime, time
 from profile_editor import profileEditor 
 
-# Importing os to Clear Terminal (lines , , ) #
-# Importing json to Read Data from Text File (lines , ) #
-# Importing datetime to Display Current Time (line ) #
-# Importing time to Simulate Paying Transaction (line ) #
+# Importing os to Clear Terminal #
+# Importing json to Read Data from Text File  #
+# Importing datetime to Display Current Time #
+# Importing time to Simulate Payment Transaction  #
 
 # Get Current Date #
 currentDate = datetime.date.today()

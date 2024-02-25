@@ -32,15 +32,11 @@ def lecturerPage(user, data,dataUpdater):
     def Register_students_to_modules():
         choice = input("Press R to register students or B to go back to the main menu: ")
         if choice.upper() == "R":
-                
             def registerUser(data):
                 # TP Number #
                 userValid = False
-
                 while userValid == False:
-                
                     student_tp_number = str(input("Enter your TP number: TP"))
-                    
                     if not student_tp_number.isnumeric or not len(str(student_tp_number)) == 6:
                         print("Invalid TP Number!\n")
                     else:
@@ -62,7 +58,6 @@ def lecturerPage(user, data,dataUpdater):
                     else:
                         print("Name includes unallowed characters!")
                     
-                    
                 # Password #
                 student_Password = f'{student_first_name}{student_last_name[0]}@{student_tp_number}'
                 
@@ -78,7 +73,7 @@ def lecturerPage(user, data,dataUpdater):
 
                 # Adding the User to Database # 
                 data["users_data"].append(new_student)
-
+                print("The student has been registered successfully\n")
                 dataUpdater(data)
         elif choice.upper() == "B":
             return
@@ -86,8 +81,7 @@ def lecturerPage(user, data,dataUpdater):
             print("Invalid choice\n")
 
         registerUser(data)
-
-
+        
     def Enroll_student(data, dataUpdater):
         choice = input("Press E to enroll students or B to go back to the main menu: ")
         if choice.upper() == "E":
@@ -125,9 +119,6 @@ def lecturerPage(user, data,dataUpdater):
     def Update_subject_enrollment_of_a_student():
         choice = input("Press U to update subject enrollment or B to go back to the main menu: ")
         if choice.upper() == "U":
-                # Ask lecturer for student tp #
-                # View the student's modules #
-                # Ask lecturer for a specific module to delete #
                 Update_subject = "TP" + input("Enter the tp number: TP")
                 modules_enrolled = []
                 for module in data["modules_data"]:
@@ -147,6 +138,7 @@ def lecturerPage(user, data,dataUpdater):
                                 if student1["student_tp"] == Update_subject:
                                     student_in_module["students_enrolled"].remove(student1)
                                     dataUpdater(data)
+                                    print("Student enrollment  data has been updated\n")
                     pass        
                 else:
                     print("Student got no modules!\n")
@@ -167,7 +159,6 @@ def lecturerPage(user, data,dataUpdater):
                     issue date: {pending_requests["issue_date"]}''')
             choice = input("Press A to approve requests or B to go back to the main menu: ")
             if choice.upper() == "A":
-            # Prompt lecturer for request id to approve #
                 request_id =input("Enter id to approve:") 
                 for request in data["enrollment_requests"][0]["pending_requests"]:
                     if request["request_id"] == request_id:
@@ -179,26 +170,22 @@ def lecturerPage(user, data,dataUpdater):
                         data["enrollment_requests"][0]["approved_requests"].append(move_request)
                         dataUpdater(data)
                         
-                    print(f"Request with ID {request_id} has been approved.")
+                    print(f"Request with ID {request_id} has been approved.\n")
                     return
-                print(f"Request with ID {request_id} not found.")        
+                print(f"Request with ID {request_id} not found.\n")        
 
             elif choice.upper() == "B":
              return
             else:
                 print("Invalid choice")
             
-    def Delete_students():
-       # From data #############################
-        # module starting date #
-        
+    def Delete_students():  
         choice = input("Press D to delete students or B to go back to the main menu: ")
         if choice.upper() == "D":
             
             for module in data["modules_data"]:
                     module_start = module["module_starting_date"]
 
-                    # current date #
                     current_date = str(datetime.today())
                     # Convert string to datetime object
                     module_start_convert = datetime.strptime(module_start, "%Y-%m-%d")
@@ -209,7 +196,7 @@ def lecturerPage(user, data,dataUpdater):
 
                     if current_date >= module_ending_date: #######################
                     # remove students from module (for loop) #
-                    # change module_starting_date to "None" #
+
                         students = module["students_enrolled"]
                         position = len(students) - 1
                         deleted_students_number = 0
@@ -219,7 +206,7 @@ def lecturerPage(user, data,dataUpdater):
                             deleted_students_number += 1
                         module["module_starting_date"] = "1999-01-01"
                         dataUpdater(data)
-                        print(f'{deleted_students_number} students has been deleted from {module["module_id"]}')
+                        print(f"{deleted_students_number} students has been deleted from {module["module_id"]}\n")
         elif choice.upper() == "B":
             return
         else:

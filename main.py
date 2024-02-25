@@ -4,9 +4,9 @@ from pages.admin import adminPage
 from pages.lecturer import lecturerPage
 from pages.trainer import trainerPage
 
-# Importing os to Clear Terminal (lines , , ) #
+# Importing os to Clear Terminal (lines 92, 61) #
 # Importing getpass to Mask User Password Input #
-# Importing json to Read Data from Text File (lines , ) #
+# Importing json to Read Data from Text File #
 
 # Read Data Text File with JSON #
 db = open("data.txt", "r")
