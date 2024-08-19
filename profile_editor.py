@@ -1,50 +1,50 @@
-import json, getpass, os
-# from .pages.student import studentPage 
+import getpass
 
-# Change User's Data Function #
-def profileEditor(user, data, dataUpdater):
-    tp = user["user_tp"]
-    print(f"Hey, {tp}")
+def profileEditor(user, data, profileChanged, dataUpdater):
+    name = user["fullname"].split(" ")
+    print(f"Hey, {name[0]}")
 
-    while True:   
-        profileEditorChoice = input(f"1.Change password\n2.Return to previous page\n")
+    while True:
+        if profileChanged:
+            return False
+
+        profileEditorChoice = input("1. Change password\n2. Return to menu\n")
         match profileEditorChoice:
             case '1':
-                while True :
+                while True:
                     # Prompt User for New Password #
                     oldPasswordConfirm = getpass.getpass(prompt="Enter old password: ")
                     changedPassword = getpass.getpass(prompt="Enter new password: ")
                     changedPasswordConfirm = getpass.getpass(prompt="Confirm new password: ")
-                    
-                    if oldPasswordConfirm == user["password"] :
-                        # Password Requirements Checker #
-                            # to Confirm Password #
-                        if changedPassword == changedPasswordConfirm:
-                            if len(changedPassword) < 8:
-                                print("Password too short!")
-                            else:
-                                # Password Should NOT Be Same as the Old Password #
-                                if changedPassword == user["password"] :
-                                    print("Password similar to the old one!")
-                                    continue
-                                else:
-                                    # Assigning New Password #
-                                    user["password"] = changedPassword
 
-                                    dataUpdater(data)
-
-                                    os.system('cls')
-                                    print("Password successfully changed!")
-                                    break
-                                
-                        else:
-                
-                            print("Password must match!")
-                    else:
+                    # Confirm Entered Old Password #
+                    if oldPasswordConfirm != user["password"]:
                         print("Old password is wrong!")
+                        break
+
+                    # New Password Should Not be Same as the Old One #
+                    if changedPassword == user["password"]:
+                        print("Password similar to the old one!")
+                        break
+
+                    # Password Should be at least Eight Letters/Digits #
+                    if len(changedPassword) < 8:
+                        print("Password too short!")
+                        break
+
+                    # Check New Password Confirmation #
+                    if changedPassword != changedPasswordConfirm:
+                        print("Password must match!")
+                        break
+
+                    # Assigning New Password #
+                    user["password"] = changedPassword
+                    dataUpdater(data)
+                    print("Password successfully changed!")
+                    return True
 
             case '2':
-                return
+                break
 
             case other:
                 print("Invalid choice!")

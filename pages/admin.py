@@ -1,11 +1,10 @@
 #PYP assign
 #Admin home page
 #welcome message#
-# from ..profile_editor import profileEditor
-
 
 def adminPage(user, data, dataUpdater):
     print ("welcome admin")
+    #main menu
     def admin_menu_choice(user, data):
         while True:
             #user input#
@@ -13,200 +12,189 @@ def adminPage(user, data, dataUpdater):
                            "2.Monthly Income Report\n" 
                            "3. View Trainer Feedback\n" 
                            "4.Update profile\n"
-                           "5. exit\n")
+                           "5. Log out\n")
             match choice:
                 case "1":
                     reigster_delete_assign_trainer(user, data, dataUpdater)
                 case "2":
-                    monthly_income_report()
+                    monthly_income_report(data)
                 case "3":
-                    view_trainer_feedback(user, data)
+                    view_trainer_feedback( data)
                 case "4":
-                    # profileEditor(user, data)
+                    profileEditor(user, data, dataUpdater)
                     print("Update")
                 case "5":
-
-def adminPage():
-    print ("welcome admin")
-    def admin_menu_choice():
-        while True:
-            #user input#
-            choice = input("1. register or delete or assign trainer \n2. Monthly Income Report \n3. View Trainer Feedback \n4. exit \n")
-            match choice:
-                case "1":
-                    reigster_delete_assign_trainer()
-                case "2":
-                    monthly_income_report()
-                case "3":
-                    view_trainer_feedback()
-                case "4":
                     print("Exiting the admin system. Goodbye!")
                     break
                 case other:
                     print("Invalid choice. Please enter a valid option.")
     #register delete assign code#
-    def reigster_delete_assign_trainer(user , data , dataUpdater):
-       
-    
-        register_delete_choice = input ("1.register new trainer\n" 
-                                        "2.delete trainer\n"
-                                        "3.assign trainer to a level\n" 
-                                        "4.assign trainer to a module \n" 
-                                        "5.back to main menu \n")
-        match register_delete_choice:
-            case"1":
-                register_trainer_name = input ("enter trainer full name: ")
-                trainer_tpnumber = int(input("enter trainer's TPnumber: TP"))
-                for trainer in ["users_data"]:
-                    if trainer["fullname"] == register_trainer_name and trainer["user_tp"] == trainer_tpnumber:
-                        if trainer["role"] == "trainer":
-                         print("Trainer already registered.")
-                    else:
-            
-                        trainer["role"] = "trainer"
-                        print("Trainer role updated.")
-                    break
-                else:
-                    new_trainer = {
-                    "fullname": register_trainer_name,
-                    "user_tp": trainer_tpnumber,
-                    "role": "trainer"
-                }
-                data["users_data"].append(new_trainer)
-                print("Trainer registered successfully.")
-                
-                dataUpdater(data)
-                
-                
-
-            case "2":
-                delete_trainer = int(input ("enter trainer Tp number: Tp    "))
-                for trainer in data["users_data"]:
-                    if trainer["user_tp"] == delete_trainer:
-                        
-                        if trainer ["role"] == "trainer":
-                                 sure = input(f"are you sure you want to delete {trainer["fullname"]}?" 
-                                     "if yes press y, if no press n")
-                        if sure.upper == "Y" :
-                            data["users_data"].remove(trainer)
-                            print ("trainer deleted successfully")
-                        elif  sure.upper =="N":
-                            break
-
-                        dataUpdater(data)
-
-
-                        
-            case "3":
-                trainer_level_tp = int(input ("enter trainer TP number: Tp"))
-                print ("1. beginner, \n2.intermeidate, \n3.advanced, \n")
-                trainerlevel = input ("choose a level for the trainer: ")
-                if trainerlevel == 1 or trainerlevel == "beginner":
-
-                    for trainer_level_tp in data["modules_data"]:
-                        if trainer_level_tp == trainer_level_tp["trainer_tp"]:
-                            trainer_level_tp["module_level"] = "beginner"
-                            print ("trainer level updated")
-                            dataUpdater(data)
-                            
-                                
-                        
-
-                elif trainerlevel == 2 or trainerlevel == "intermeidate":
-                    "add trainer name to the level"
-                    for trainer_level_tp in data["modules_data"]:
-                        if trainer_level_tp == data["trainer_tp"]:
-                            trainer_level_tp["module_level"] = "intermeidate"
-                            print ("trainer level updated")
-                            dataUpdater(data)
-
-                elif trainerlevel == 3 or trainerlevel == "advanced":
-                    "add trainer name to the level"
-                    for trainer_level_tp in data["modules_data"]:
-                        if trainer_level_tp == data["trainer_tp"]:
-                            trainer_level_tp["module_level"] = "advanced"
-                            print ("trainer level updated")
-                            dataUpdater(data)
-                else:
-                    print ("invalid choice please choose again")
-            case "4":
-                "add trainer to a module"
-                trainer_module_tp = int(input ("enter trainer TP number: Tp"))
-                for trainer_module_tp1 in data["modules_data"]:
-                    if trainer_module_tp1 == trainer_module_tp:
-                        choose1 = input("type a module you want to add: ")
-                        trainer_module_tp1["module_namae"].append(choose1)
-                        adding_1_module = input("do you want to add more modules?" 
-                                                "if yes press Y if no press N:\n")
-                        if adding_1_module.upper == "Y":
-                            choose2 = input("type a module you want to add: ")
-                            trainer_module_tp1["module_namae"].append(choose2)
-                        elif adding_1_module.upper == "N":
-                            print ("trainers have been assigned")
-                            break
-                        adding_2_module = input("do you want to add more modules?" 
-                                                "if yes press Y if no press N:\n")
-                        if adding_2_module.upper == "Y":
-                            choose3 = input("type a module you want to add: ")
-                            trainer_module_tp1["module_namae"].append(choose3)
-                        elif adding_2_module.upper == "N":
-                            print ("trainers have been assigned")
-                            break
-                        dataUpdater(data)
-            case other:
-                print("invalid")
-
-                 
-
     def reigster_delete_assign_trainer():
         print(" reigster or delete trainer functionality goes here")
     
         register_delete_choice = input ("1.register new trainer \n2.delete trainer \n3.assign trainer to a level \n4.back to main menu \n")
         match register_delete_choice:
-            case" 1":
-                trainername1 = input ("enter trainer full name:    ")
-            case "2":
-                trainername = input ("enter trainer full name:    ")
-            case "3":
-                trainername = input ("enter trainer full name:    ")
-                print ("1. beginner, \n2.intermeidate, \n3.advance, \n")
-                trainerlevel = input ("choose a level for the trainer: ")
-                if trainerlevel == 1 or trainerlevel == "beginner":
-                    "add trainer name to the level"
-                elif trainerlevel == 2 or trainerlevel == "intermeidate":
-                    "add trainer name to the level"
-                elif trainerlevel == 3 or trainerlevel == "advance":
-                    "add trainer name to the level"
-                else:
-                    print ("invalid choice please choose again")
-    #view icome monthly#                
-    def monthly_income_report():
-        print("Monthly Income Report functionality goes here.")
-        print ("this is your monlthy income")
-    # view trainer feedback#
-    def view_trainer_feedback(user, data):
-        print("View Trainer Feedback functionality goes here.")
-    
-        for feedback in data["trainer_feedback"]:
-            author_tp = feedback["author_tp"]
-            text_message = feedback["message"]
-
-            for user_filter in data["users_data"]:
-                if author_tp == user_filter["user_tp"]:
-                    author_name = user_filter["fullname"]
+            case"1":
+                # register new trainer
                     
-            print(f"From {author_name}")
-            print(f"Message: {text_message}")
-            print("----------------")
-    return_to_menu = input("if you want to go back to main menu press y ")
-    if return_to_menu.upper == "y":
-        break
+                def registerUser(data):
+                    # TP Number #
+                    userValid = False
+
+                    while userValid == False:
+                    
+                        userTPNumber = str(input("Enter your TP number: TP"))
+                        
+                        if not userTPNumber.isnumeric or not len(str(userTPNumber)) == 6:
+                            print("Invalid TP Number!")
+                        else:
+                            for user in data["users_data"]:
+                                if f"TP{userTPNumber}" == user["user_tp"]:
+                                    print("TP number is already existing!")
+                                    return
+                            else:
+                                userValid = True                        
+                    
+                    # Name #
+                    while True:
+                        userFirstName = input("Enter your First name: ")
+                        userLastName = input("Enter your Last name: ")
+
+                        if userFirstName.isalpha() and userLastName.isalpha():
+                            userName = (f"{userFirstName.capitalize()} {userLastName.capitalize()}")
+                            break
+                        else:
+                            print("Name includes unallowed characters!")
+                        
+                        
+                    # Password # 
+                    userPassword = f'{userFirstName}{userLastName[0]}@{userTPNumber}'
+                    
+                    userRole = "trainer"
     
-       
+                    # New User Formatting #
+                    newUser = {
+                                "user_tp":f"TP{userTPNumber}",
+                                "password":userPassword,
+                                "fullname":userName,
+                                "role":userRole,
+                                }
 
-   
+                    # Adding the User to Database # 
+                    data["users_data"].append(newUser)
 
-    admin_menu_choice(user,data)
+                    dataUpdater(data)
+
+                registerUser(data)
+
+            case "2":
+                #delete trainer
+                while True:
+                    delete_trainer = "TP" + input("Enter trainer Tp number: Tp")
+                    for trainer in data["users_data"]:
+                        if trainer["user_tp"] == delete_trainer:
+                            if trainer["role"] == "trainer":
+                                sure = input(f"Are you sure you want to delete {trainer['fullname']}? "
+                                            "If yes, press 'y'; if no, press 'n': ")
+                                if sure.upper() == "Y":
+                                    index = data["users_data"].index(trainer)
+                                    #deleteing trainer
+                                    del data["users_data"][index]
+                                    print("Trainer deleted successfully")
+                                    dataUpdater(data)
+                                    return
+                                elif sure.upper() == "N":
+                                    break
+
+  
+            case "3":
+                #assign trainer to a module
+                while True:
+                    modules_without_trainers = []
+                    for module_data in data["modules_data"]:
+                        if module_data["trainer_tp"] == "None":
+                            modules_without_trainers.append(module_data["module_id"])
+
+                    if len(modules_without_trainers) == 0:
+                        print("All modules have trainers.")
+                        break
+
+                    else:
+                        print("Modules without trainers:")
+                        for module_id in modules_without_trainers:
+                            print(module_id)
+                        
+
+                    select_module_id = input("Enter the module ID you want to assign a trainer to: ")
+
+                    # Verify if the entered module ID exists
+                    module_exists = False
+                    for module_data in data["modules_data"]:
+                        if module_data["module_id"] == select_module_id:
+                            module_exists = True
+                            break
+
+                    if not module_exists:
+                        print("Module ID does not exist!")
+                        continue  # Restart the loop to prompt the user again
+
+
+                    trainer_tp_number = "TP" + str(input("Enter the trainer TP number: TP"))
+                    #verify that the user tp is found
+                    trainer_found = False
+                    for user_data in data["users_data"]:
+                        if user_data["user_tp"] == trainer_tp_number:
+                            if user_data["role"] == "trainer":
+                                trainer_found = True
+                                break
+
+                    if trainer_found:
+                        for module_data in data["modules_data"]:
+                            if module_data["module_id"] == select_module_id:
+                                module_data["trainer_tp"] = trainer_tp_number
+                                dataUpdater(data)
+                                print("Trainer assigned successfully!")
+                                break
+                    else:
+                        print("Trainer TP number not found or user is not a trainer!")
+            case"4":
+                return
+          
+                        
+    def monthly_income_report(data):
+        #monthly income
+        while True:
+            trainer_income = 0
+            trainer_income_tp = "TP" + input("Enter trainer TP number (or 'R' to return): TP ")
+            if trainer_income_tp.upper() == 'TPR':
+                break
+                #verify if the trainer tp exists
+            trainer_found = False
+            for user_data in data["users_data"]:
+                if trainer_income_tp == user_data["user_tp"]:
+                    trainer_found = True
+                    break
+
+            if not trainer_found:
+                print("Trainer TP number not found.")
+                continue  # Restart the loop to prompt the user again
+                #calculate the monthly income
+            for module_data in data["modules_data"]:
+                if module_data["trainer_tp"] == trainer_income_tp:
+                    if module_data["students_enrolled"]:
+                        student_count = len(module_data["students_enrolled"])
+                        income_per_student = int(module_data["module_fee"])
+                        trainer_income += student_count * income_per_student
+                        print(f"The income for module {module_data['module_id']} is: {trainer_income}")
+
+            if trainer_income == 0:
+                print(f"No income data found for trainer TP {trainer_income_tp}.")
+
+        
+                        
+                            
+
+    # view trainer feedback#
     def view_trainer_feedback():
         print("View Trainer Feedback functionality goes here.")
     
