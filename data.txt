@@ -41,6 +41,13 @@
       "password": "12345678",
       "fullname": "Abdelrahman Abdellgabbar",
       "role": "student"
+    },
+    {
+      "user_tp": "TP132444",
+      "password": "12345678",
+      "fullname": "Sad Asd",
+      "role": "admin",
+      "creation_date": "2024-01-22"
     }
   ],
   "modules_data": [
@@ -48,44 +55,75 @@
       "module_id": "pyadv64308",
       "module_name": "Python",
       "module_level": "Advanced",
-      "trainer_tp": "tp045643",
+      "trainer_tp": "TP012345",
       "students_enrolled": [
         "TP000001",
-        "TP079014",
         "TP079014"
       ],
       "module_starting_date": "2024-08-27",
-      "module_fee": "300"
+      "module_fee": "300",
+      "module_timetable": [
+        {"Monday": "None"},
+        {"Tuesday": "16:00-18:30"},
+        {"Wednesday": "None"},
+        {"Thursday": "16:00-18:30"},
+        {"Friday": "None"}
+      ]
     }
   ],
   "trainer_feedback": [
     {
       "message_id": "1",
-      "author_tp": "TP00340",
+      "author_tp": "TP012345",
       "message": "Hey Tae I am here to discuss a student"
     }
   ],
   "enrollment_requests": [
     {
-      "request_id": "1",
-      "student_tp": "TP000123",
-      "trainer_tp": "TP012345",
-      "module_id": "pyadv64308",
-      "request_status": "Pending"
-    },
-    {
-      "request_id": "2",
-      "student_tp": "TP090123",
-      "trainer_tp": "TP012345",
-      "module_id": "pyadv64308",
-      "request_status": "Canceled"
-    },
-    {
-      "request_id": "3",
-      "student_tp": "TP020123",
-      "trainer_tp": "TP012345",
-      "module_id": "pyadv64308",
-      "request_status": "Approved"
+      "pending_requests": [
+        {
+          "request_id": "1",
+          "student_tp": "TP089014",
+          "trainer_tp": "TP012345",
+          "module_id": "pyadv64308",
+          "request_status": "Pending",
+          "issue_date": "2024-12-28",
+          "processed_date": "None"
+        }
+      ],
+      "approved_requests": [
+        {
+          "request_id": "3",
+          "student_tp": "TP089014",
+          "trainer_tp": "TP012345",
+          "module_id": "pyadv64308",
+          "request_status": "Approved",
+          "issue_date": "2024-12-28",
+          "processed_date": "2024-01-10"
+        }
+      ],
+      "canceled_requests": [
+        {
+          "request_id": "2",
+          "student_tp": "TP089014",
+          "trainer_tp": "TP012345",
+          "module_id": "pyadv64308",
+          "request_status": "Canceled",
+          "issue_date": "2024-12-28",
+          "processed_date": "2024-01-11"
+        }
+      ],
+      "denied_requests": [
+        {
+          "request_id": "4",
+          "student_tp": "TP089014",
+          "trainer_tp": "TP012345",
+          "module_id": "pyadv64308",
+          "request_status": "Denied",
+          "issue_date": "2024-12-28",
+          "processed_date": "2024-01-20"
+        }
+      ]
     }
   ],
   "invoices_data": [
@@ -111,7 +149,7 @@
       "unpaid_invoices": [
         {
           "invoice_id": "2",
-          "student_tp": "TP1",
+          "student_tp": "TP079014",
           "module_id": "pyadv64308",
           "invoice_status": "unpaid",
           "payable": "300",

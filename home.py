@@ -130,10 +130,13 @@ def signUp():
     currentDate = datetime.date.today()
 
     # New User Formatting #
-    new_user = {"user_tp":f"TP{userTPNumber}", "password":userPassword, "fullname":userName, "role":userRole, "creation_date":currentDate}
+    newUser = {"user_tp":f"TP{userTPNumber}",
+                "password":userPassword,
+                "fullname":userName, "role":userRole,
+                "creation_date":f"{currentDate}"}
 
     # Adding the User to Database # 
-    data["users_data"].append(new_user)
+    data["users_data"].append(newUser)
 
     dataUpdater(data)
 
